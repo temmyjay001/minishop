@@ -134,7 +134,7 @@ class CartController extends Controller
             ], 200);
         } else {
             return response()->json([
-                'message' => 'The CarKey you provided does not match the Cart Key for this Cart.',
+                'message' => 'You are not a authenticated user',
             ], 400);
         }
     }

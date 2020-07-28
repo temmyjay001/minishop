@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Products as ProductsResources;
 use App\Products;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-
+        // return response()->json(["error" => false, "data" => $products]);
+        $products = Products::all();
+        return new ProductsResources($products);
     }
 
     /**
